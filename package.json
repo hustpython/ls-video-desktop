@@ -22,7 +22,7 @@
   },
   "build": {
     "appId": "com.electron.desktop",
-    "productName": "ls-video-desttop",
+    "productName": "ls-video-desktop",
     "asar": true,
     "copyright": "Copyright © 2023 electron",
     "directories": {

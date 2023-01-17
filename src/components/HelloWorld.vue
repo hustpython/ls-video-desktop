@@ -2,6 +2,7 @@
     import {ref} from 'vue'
 
     const win: any = window;
+    const platform = win.electronAPI.platform;
 
     const rspFromMainValue = ref();
     const ipcRenderOnCallBack = (_: any, data: any) => {
@@ -10,13 +11,12 @@
 
     win.electronAPI.rspToRender(ipcRenderOnCallBack);
 
-
     const sendToMain = () => {
         win.electronAPI.ipcRenderer.send('sendToMain', "来自渲染进程的消息");
     };
 
     defineProps<{ msg: string }>()
-    const platform = win.electronAPI.platform;
+
     const count = ref(0)
 
 
