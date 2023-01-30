@@ -1,5 +1,6 @@
 <template>
     <div class="menu">
+        <div class="lslog">L S</div>
         <ul class="list">
             <li class="navItem" v-for="item in menus">
                 <div class="icon" :aria-label="item.tips">
@@ -62,6 +63,7 @@
 <style scoped lang="scss">
     .menu {
         -webkit-app-region: drag;
+        flex-flow: column nowrap;
         flex: auto;
         position: relative;
         cursor: pointer;
@@ -71,11 +73,24 @@
         align-items: center;
         justify-content: center;
 
+        .lslog {
+            box-sizing: border-box;
+            padding: 0;
+            height: 60px;
+            opacity: .6;
+            flex: none;
+            text-align: center;
+            line-height: 60px;
+            font-weight: bold;
+            color: green;
+        }
+
         .list {
             -webkit-app-region: no-drag;
+            margin: 0;
 
             &:last-child {
-                margin-bottom: 30px;
+                margin-bottom: 150px;
             }
 
             .navItem {
@@ -83,7 +98,11 @@
                     content: '';
                     display: block;
                     width: 100%;
-                    padding-bottom: 60%;
+                    padding-bottom: 51%;
+                }
+
+                &:first-child:before {
+                    padding-bottom: 0;
                 }
 
                 .icon {
