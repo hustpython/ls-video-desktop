@@ -2,8 +2,8 @@
     <div class="menu">
         <ul class="list">
             <li class="navItem" v-for="item in menus">
-                <div class="icon">
-                    <svg-icon name="search" :aria-label="item.tips"/>
+                <div class="icon" :aria-label="item.tips">
+                    <svg-icon :name="item.icon"/>
                 </div>
             </li>
         </ul>
@@ -17,8 +17,6 @@
 
     const {t} = useI18n();
 
-    console.log(t('action'));
-
     const menus = computed(() => {
         return [
             {
@@ -28,27 +26,33 @@
                 enable: true,
             },
             {
-                to: '/search',
+                to: '/setting',
                 tips: t('action'),
-                icon: 'search',
+                icon: 'setting',
                 enable: true,
             },
             {
-                to: '/search',
+                to: '/favorite',
                 tips: t('action'),
-                icon: 'search',
+                icon: 'favorite',
                 enable: true,
             },
             {
-                to: '/search',
+                to: '/home',
                 tips: t('action'),
-                icon: 'search',
+                icon: 'home',
                 enable: true,
             },
             {
-                to: '/search',
+                to: '/chart',
                 tips: t('action'),
-                icon: 'search',
+                icon: 'chart',
+                enable: true,
+            },
+            {
+                to: '/download',
+                tips: t('action'),
+                icon: 'download',
                 enable: true,
             },
         ].filter(m => m.enable)
@@ -57,6 +61,7 @@
 
 <style scoped lang="scss">
     .menu {
+        -webkit-app-region: drag;
         flex: auto;
         position: relative;
         cursor: pointer;
@@ -65,6 +70,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+
         .list {
             -webkit-app-region: no-drag;
 
@@ -73,18 +79,16 @@
             }
 
             .navItem {
-
                 &:before {
                     content: '';
                     display: block;
                     width: 100%;
-                    padding-bottom: 84%;
+                    padding-bottom: 60%;
                 }
 
                 .icon {
-
                     & > svg {
-                        width:100%;
+                        width: 100%;
                     }
                 }
             }

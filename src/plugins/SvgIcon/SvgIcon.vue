@@ -18,10 +18,10 @@
 
 <style>
     .svgClass {
-        width: 2em;
-        height: 2em;
+        width: 1.3em;
+        height: 1.3em;
         fill: currentColor;
-        color: red;
+        color: #8abcd1;
         vertical-align: middle;
     }
 </style>

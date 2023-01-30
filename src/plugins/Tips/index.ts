@@ -86,15 +86,4 @@ setTimeout(() => {
     document.body.addEventListener('click', updateTips)
 
     document.body.addEventListener('contextmenu', updateTips)
-
-    // window.app_event.on('focus', () => {
-    //     hideTips()
-    // })
-    // window.app_event.on('dragStart', () => {
-    //     isDraging = true
-    //     hideTips()
-    // })
-    // window.app_event.on('dragEnd', () => {
-    //     isDraging = false
-    // })
 })

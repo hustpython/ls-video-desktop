@@ -25,6 +25,7 @@
     #left {
         flex: none;
         width: 6.6%;
+        background-color: white;
     }
 
     #right {
