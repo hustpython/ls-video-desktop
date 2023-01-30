@@ -1,23 +1,35 @@
 <script setup lang="ts">
     import HelloWorld from './components/HelloWorld.vue'
+    import Aside from './layout/Aside/Navbar.vue'
 </script>
 
 <template>
-    <HelloWorld msg="来自父组件的消息"/>
+    <div id="container">
+        <Aside id="left"/>
+        <div id="right"></div>
+    </div>
+
 </template>
 
-<style scoped>
-    .logo {
-        height: 6em;
-        padding: 1.5em;
-        will-change: filter;
+<style lang="scss">
+    @import './assets/styles/index.scss';
+
+    #container {
+        display: flex;
+        height: 100%;
+        margin: 0;
+        padding: 0;
     }
 
-    .logo:hover {
-        filter: drop-shadow(0 0 2em #646cffaa);
+
+    #left {
+        flex: none;
+        width: 6.6%;
     }
 
-    .logo.vue:hover {
-        filter: drop-shadow(0 0 2em #42b883aa);
+    #right {
+        flex: 1;
+        width: 100px;
+        background: palegoldenrod;
     }
 </style>

@@ -1,5 +1,18 @@
 <script setup lang="ts">
     import {ref} from 'vue'
+    import {useI18n} from "vue-i18n";
+
+    const {t, locale} = useI18n();
+    console.log(t("action"));
+
+    const switchLanguage = () => {
+        if (locale.value === "zh") {
+            locale.value = "en"
+        } else {
+            locale.value = "zh"
+        }
+    }
+
     const win: any = window;
     const platform = win.electronAPI.platform;
     const rspFromMainValue = ref();
@@ -24,6 +37,9 @@
         <button type="button" @click="sendToMain">点击发送消息给主进程</button>
     </div>
     <div>来自electron主进程的消息: {{rspFromMainValue}}</div>
+    <button type="button" @click="switchLanguage">点击切换language</button>
+
+    <div><span> 此数据来自于 vue-i18n {{ $t("action") }}/ {{locale}} </span></div>
 </template>
 
 <style scoped>

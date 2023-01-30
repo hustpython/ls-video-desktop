@@ -1,4 +1,4 @@
-import {app, BrowserWindow, ipcMain} from 'electron'
+import {app, BrowserWindow, Menu, ipcMain} from 'electron'
 import path from 'path'
 //app 控制应用程序的事件生命周期。
 //BrowserWindow 创建并控制浏览器窗口。
@@ -7,8 +7,10 @@ let win: BrowserWindow | null;
 //定义全局变量获取 窗口实例
 
 const createWindow = () => {
+    Menu.setApplicationMenu(null) // null值取消顶部菜单栏
     win = new BrowserWindow({
-        //
+        transparent: true,
+        frame: false,
         webPreferences: {
             devTools: true,
             contextIsolation: true,

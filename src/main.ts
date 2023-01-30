@@ -1,5 +1,9 @@
-import { createApp } from 'vue'
-import './style.css'
+import {createApp} from 'vue'
 import App from './App.vue'
+import {ls_video_in18} from './lang/index.ts'
+import initPlugins from './plugins'
+import 'virtual:svg-icons-register';
 
-createApp(App).mount('#app')
+const app = createApp(App);
+initPlugins(app)
+app.use(ls_video_in18).mount('#app')

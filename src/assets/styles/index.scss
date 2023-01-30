@@ -1,0 +1,31 @@
+:root {
+  --color-content-background: rgb(255, 255, 255);
+  --color-font: rgb(66, 66, 66);
+  ol, ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  font-size: inherit;
+  vertical-align: baseline;
+}
+
+#app {
+  display: block;
+  border-radius: 10px;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  color: var(--color-font);
+  background: var(--background-image) var(--background-image-position) no-repeat;
+  background-size: var(--background-image-size);
+  transition: background-color 0.4s ease;
+  background-color: var(--color-content-background);
+  box-sizing: border-box;
+  -webkit-app-region: drag;
+
+}
