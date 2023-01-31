@@ -13,7 +13,7 @@ const createWindow = () => {
         frame: false,
         webPreferences: {
             devTools: true,
-            contextIsolation: true,
+            contextIsolation: false,
             nodeIntegration: true,
             preload: path.resolve(__dirname, 'preload.js')
         }

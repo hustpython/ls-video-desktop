@@ -1,6 +1,15 @@
+$radius-border: 4px;
+$color-blue: rgb(138, 188, 209);
+$color-blue-5: rgb(138, 188, 209, .5);
+$color-blue-3: rgb(138, 188, 209, 0.3);
+$color-blue-2: rgb(138, 188, 209, 0.2);
+$transition-normal: .5s ease;
+$bar-top-px: 13px;
 :root {
   --color-content-background: rgb(255, 255, 255);
   --color-font: rgb(66, 66, 66);
+  --color-main-background: rgba(255, 255, 255, 0.9);
+  --color-blue: rgb(138, 188, 209);
 
   ol, ul {
     list-style: none;
@@ -12,8 +21,9 @@
 
 #app {
   display: block;
-  border-radius: 3px;
+  border-radius: $radius-border;
   height: 100%;
   position: relative;
   overflow: hidden;
+  background: white;
 }

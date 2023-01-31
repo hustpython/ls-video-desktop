@@ -18,10 +18,12 @@
 
 <style>
     .svgClass {
+        margin: 0;
+        padding: 0;
         width: 1.3em;
         height: 1.3em;
         fill: currentColor;
-        color: #8abcd1;
+        color: var(--color-blue);
         vertical-align: middle;
     }
 </style>

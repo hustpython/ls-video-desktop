@@ -1,1 +1,1 @@
-"use strict";const n=require("os"),e=require("electron");e.contextBridge.exposeInMainWorld("electronAPI",{platform:n.platform(),ipcRenderer:{...e.ipcRenderer},rspToRender:r=>e.ipcRenderer.on("rspToRender",r)});
+"use strict";
