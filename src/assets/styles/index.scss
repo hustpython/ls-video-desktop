@@ -2,9 +2,11 @@ $radius-border: 4px;
 $color-blue: rgb(138, 188, 209);
 $color-blue-5: rgb(138, 188, 209, .5);
 $color-blue-3: rgb(138, 188, 209, 0.3);
+$color-blue-4: rgb(138, 188, 209, 0.4);
 $color-blue-2: rgb(138, 188, 209, 0.2);
 $transition-normal: .5s ease;
 $bar-top-px: 13px;
+
 :root {
   --color-content-background: rgb(255, 255, 255);
   --color-font: rgb(66, 66, 66);
@@ -16,6 +18,10 @@ $bar-top-px: 13px;
     padding-left: 0;
   }
 
+  input {
+    border: none;
+    outline: none;
+  }
 
 }
 

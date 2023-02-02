@@ -3,13 +3,14 @@
         <div class="lslog">L S</div>
         <ul class="list">
             <router-link
-                    v-for="item in menus"
+                    v-for="(item,index) in menus"
                     :to="item.to" :aria-label="item.tips"
-
             >
-
-                <svg-icon class="navItem" :name="item.icon"/>
-
+                <svg-icon
+                        class="navItem"
+                        v-bind:class="{'exact_active':selectID===index}" :name="item.icon"
+                        @click="selectID=index"
+                />
 
             </router-link>
         </ul>
@@ -18,11 +19,11 @@
 
 <script setup>
 
-    import {computed} from 'vue';
+    import {computed, ref} from 'vue';
     import {useI18n} from "vue-i18n";
 
     const {t} = useI18n();
-
+    const selectID = ref(-1);
     const menus = computed(() => {
         return [
             {
@@ -95,7 +96,7 @@
             margin: 0;
 
             &:last-child {
-                margin-bottom: 150px;
+                margin-bottom: 180px;
             }
         }
     }
@@ -108,7 +109,7 @@
         transition-property: background-color;
 
         &:hover {
-            background-color: $color-blue-3;
+            background-color: $color-blue-4;
         }
     }
 
@@ -120,12 +121,8 @@
 
 
     .exact_active {
-        margin: 0;
-        transition: $transition-normal;
-        transition-property: background-color;
-        padding-top: calc($bar-top-px - 2.5px);
-        padding-bottom: calc($bar-top-px + 1px);
         background-color: $color-blue-3;
     }
+
 
 </style>

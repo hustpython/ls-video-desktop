@@ -1,6 +1,7 @@
 <script setup lang="ts">
     import HelloWorld from './components/HelloWorld.vue'
     import Aside from './layout/Aside/Navbar.vue'
+    import Topbar from './layout/Topbar/Topbar.vue'
     import View from './layout/View/View.vue'
 </script>
 
@@ -8,9 +9,8 @@
     <div id="container">
         <Aside id="left"/>
         <div id="right">
-            <div>
-                <View/>
-            </div>
+            <Topbar/>
+            <View/>
         </div>
     </div>
 
@@ -27,14 +27,15 @@
 
     #left {
         flex: none;
-        width: 6.6%;
+        width: 7.2%;
         background-color: $color-blue-3;
     }
 
     #right {
         flex: 1;
         width: 100px;
-        background: $color-blue-5;
+        padding-left: 12px;
+        background: white;
         border-top-left-radius: $radius-border;
         border-bottom-left-radius: $radius-border;
         box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);

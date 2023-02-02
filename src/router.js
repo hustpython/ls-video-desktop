@@ -18,8 +18,6 @@ const router = createRouter({
             component: Search,
         },
     ],
-    linkActiveClass: "active",
-    linkExactActiveClass: "exact_active"
 })
 
 

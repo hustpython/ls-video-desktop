@@ -12,6 +12,7 @@ const createWindow = () => {
         transparent: true,
         frame: false,
         webPreferences: {
+            webSecurity: false,
             devTools: true,
             contextIsolation: false,
             nodeIntegration: true,
