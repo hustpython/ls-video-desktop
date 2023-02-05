@@ -4,5 +4,8 @@
   "home": "home",
   "chart": "table",
   "favorite": "favorite",
-  "download": "download"
+  "download": "download",
+  "close": "close",
+  "min": "min",
+  "searchPlaceholder": "Search Movies Tvs Or Reviews..."
 }

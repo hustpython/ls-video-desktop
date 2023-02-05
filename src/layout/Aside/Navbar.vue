@@ -110,6 +110,8 @@
 
         &:hover {
             background-color: $color-blue-4;
+            transition: box-shadow .4s ease, background-color $transition-normal;
+            box-shadow: 0 1px 5px 0 rgba(0, 0, 0, .2);
         }
     }
 

@@ -22,6 +22,8 @@
         height: 100%;
         margin: 0;
         padding: 0;
+        background: url('./assets/background/background_lsf.jpg');
+        background-size: cover;
     }
 
 
@@ -35,7 +37,7 @@
         flex: 1;
         width: 100px;
         padding-left: 12px;
-        background: white;
+        background: rgba(255, 255, 255, .8);
         border-top-left-radius: $radius-border;
         border-bottom-left-radius: $radius-border;
         box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);

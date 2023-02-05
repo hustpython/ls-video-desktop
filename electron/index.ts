@@ -11,10 +11,11 @@ const createWindow = () => {
     win = new BrowserWindow({
         transparent: true,
         frame: false,
+        icon: path.resolve(__dirname, 'logo.png'),
         webPreferences: {
             webSecurity: false,
             devTools: true,
-            contextIsolation: false,
+            contextIsolation: true,
             nodeIntegration: true,
             preload: path.resolve(__dirname, 'preload.js')
         }
@@ -25,6 +26,7 @@ const createWindow = () => {
         win.loadURL(`${process.env['VITE_DEV_SERVER_URL']}`)
     }
     win.webContents.openDevTools({mode: 'detach'});
+    win.setProgressBar(0.5);
 }
 app.whenReady().then(createWindow);
 
@@ -33,3 +35,5 @@ ipcMain.on('sendToMain', (_, message) => {
     win!.webContents.send('rspToRender', {message: "给render进程响应: " + Math.random().toString(36).substr(2)})
 })
 
+ipcMain.on('min', e => win!.minimize());
+ipcMain.on('close', e => win!.close());

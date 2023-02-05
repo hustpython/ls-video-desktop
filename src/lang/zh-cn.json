@@ -4,5 +4,9 @@
   "home": "主页",
   "chart": "表格",
   "favorite": "喜爱",
-  "download": "下载"
+  "download": "下载",
+  "close": "关闭",
+  "min": "最小化",
+  "searchPlaceholder": "搜索电影，剧集，影评等...",
+  "search__welcome": "翩若惊鸿，婉若游龙。<br>荣曜秋菊，华茂春松~~😉"
 }

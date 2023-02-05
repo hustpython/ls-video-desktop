@@ -3,7 +3,7 @@
         <div class="search" :class='{active:focus}'>
             <input
                     v-model.trim="text"
-                    type="text" placeholder="请搜索..."
+                    type="text" :placeholder="$t('searchPlaceholder')"
                     @focus="handleFocus"
                     @blur="handleBlur">
 
@@ -17,14 +17,41 @@
             </transition>
 
             <div class="searchDiv"
-                 style="position:absolute;left: 345px">
+                 style="position:absolute;left: 348px"
+            >
                 <svg-icon name="search"
                           class="svgSearch">
                 </svg-icon>
             </div>
-
+        </div>
+        <div class="ctrlDiv">
+            <button type="button" class="ctrlMin" :aria-label="$t('min')"
+                    @click="handleCtrlClick('min')">
+                <svg-icon
+                        name="minus"
+                >
+                </svg-icon>
+            </button>
+            <button type="button" class="ctrlClose" :aria-label="$t('close')"
+                    @click="handleCtrlClick('close')">
+                <svg-icon name="close"
+                >
+                </svg-icon>
+            </button>
         </div>
 
+
+        <div v-if="searchList" class="searchList">
+            <ul>
+                <li
+                        v-for="(item, index) in searchList"
+                        :class="{select: selectIndex === index }"
+                        @mouseenter="selectIndex = index"
+                >
+                    <span>{{ item }}</span>
+                </li>
+            </ul>
+        </div>
     </div>
 </template>
 
@@ -43,12 +70,20 @@
         text.value = ""
     }
 
+    const searchList = ref([]);
+
+    const handleCtrlClick = (m) => {
+        window.electronAPI.ipcRenderer.send(m);
+    }
+
 </script>
 
 <style scoped lang="scss">
     .Topbar {
         -webkit-app-region: drag;
         padding-top: 15px;
+        cursor: pointer;
+        height: 50px;
 
         .active {
             transition: box-shadow .4s ease, background-color $transition-normal;
@@ -77,6 +112,8 @@
                 text-align: center;
                 align-items: center;
 
+                border-radius: $radius-border;
+
                 &:hover {
                     transition: background-color $transition-normal;
                     background-color: $color-blue-5;
@@ -96,5 +133,55 @@
 
         }
 
+        .searchList {
+            background-color: $color-blue-2;
+            border-bottom-left-radius: $radius-border;
+            border-bottom-right-radius: $radius-border;
+            -webkit-app-region: no-drag;
+            width: 310px;
+            font-size: 13px;
+
+        }
     }
+
+
+    .ctrlDiv {
+        position: fixed;
+        padding: 0;
+        top: 10px;
+        right: 10px;
+        text-align: center;
+        align-items: center;
+
+
+        -webkit-app-region: no-drag;
+
+        .ctrlClose {
+            margin-right: -2px;
+            padding: 0;
+            width: 40px;
+            margin-top: -20px;
+            height: 30px;
+
+            &:hover {
+                transition: background-color $transition-normal;
+                background-color: $color-blue-5;
+                border-top-right-radius: $radius-border;
+            }
+        }
+
+        .ctrlMin {
+            width: 40px;
+            height: 30px;
+            margin-top: -20px;
+
+            &:hover {
+                transition: background-color $transition-normal;
+                background-color: $color-blue-2;
+            }
+        }
+
+
+    }
+
 </style>

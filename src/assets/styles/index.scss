@@ -4,7 +4,7 @@ $color-blue-5: rgb(138, 188, 209, .5);
 $color-blue-3: rgb(138, 188, 209, 0.3);
 $color-blue-4: rgb(138, 188, 209, 0.4);
 $color-blue-2: rgb(138, 188, 209, 0.2);
-$transition-normal: .5s ease;
+$transition-normal: .3s ease;
 $bar-top-px: 13px;
 
 :root {
@@ -15,7 +15,8 @@ $bar-top-px: 13px;
 
   ol, ul {
     list-style: none;
-    padding-left: 0;
+    padding: 0;
+    margin: 0;
   }
 
   input {
@@ -23,6 +24,11 @@ $bar-top-px: 13px;
     outline: none;
   }
 
+  button {
+    cursor: pointer;
+    border: none;
+    background: transparent;
+  }
 }
 
 #app {
